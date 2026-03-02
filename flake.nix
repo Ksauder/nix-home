@@ -15,20 +15,23 @@
 
   outputs = inputs@{ self, nixpkgs, nix-darwin, home-manager }:
     {
-      darwinConfigurations."mbp" = nix-darwin.lib.darwinSystem {
+      # https://nix-darwin.github.io/nix-darwin/manual/
+      darwinConfigurations."olembp" = nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         modules = [
           ./hosts/mbp/configuration.nix
           home-manager.darwinModules.home-manager
           {
-            users.users.yourname = {
-              name = "yourname";
-              home = "/Users/yourname";
+            users.users.kylesauder = {
+              name = "kylesauder";
+              home = "/Users/kylesauder/";
             };
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.backupFileExtension = "backup";
-            home-manager.users.yourname = import ./home/home.nix;
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              backupCommand = "echo";
+              users.kylesauder = import ./home/home.nix;
+            };
           }
         ];
       };

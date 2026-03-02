@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  system.primaryUser = "ksauder";
+  system.primaryUser = "kylesauder";
 
   # CLI tools (replaces brew install)
   environment.systemPackages = with pkgs; [
