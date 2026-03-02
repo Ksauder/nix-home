@@ -19,7 +19,7 @@
       darwinConfigurations."olembp" = nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         modules = [
-          ./hosts/mbp/configuration.nix
+          ./hosts/olembp/configuration.nix
           home-manager.darwinModules.home-manager
           {
             users.users.kylesauder = {
