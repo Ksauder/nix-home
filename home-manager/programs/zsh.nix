@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, ... }:
 
 {
   programs.zsh = {
@@ -32,23 +32,4 @@
       theme = "aussiegeek";
     };
   };
-
-  programs.starship.enable = true;
-  programs.direnv.enable = true;
-  programs.git = {
-    enable = true;
-    settings = {
-      user.name = "Kyle Sauder";
-      user.email = "ksauder@gmail.com";
-      push.autoSetupRemote = true;
-    };
-  };
-
-  home.packages = [
-    pkgs.nerd-fonts.fira-mono
-    pkgs.nerd-fonts.hack
-  ];
-
-  fonts.fontconfig.enable = true;
-  home.stateVersion = "25.11";
 }

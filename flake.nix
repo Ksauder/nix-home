@@ -29,8 +29,7 @@
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              backupCommand = "echo";
-              users.kylesauder = import ./home/home.nix;
+              users.kylesauder = import ./home-manager/macos-personal.nix;
             };
           }
         ];
