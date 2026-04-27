@@ -2,7 +2,6 @@
 
 {
   system.primaryUser = "kylesauder";
-
   # CLI tools (replaces brew install)
   environment.systemPackages = with pkgs; [
     bat fzf delta gh lazygit lsd ripgrep tree direnv curl wget iftop jq nmap
@@ -21,13 +20,8 @@
     finder.AppleShowAllFiles = true;
     NSGlobalDomain.KeyRepeat = 2;
   };
-
-  # Determinate installer manages Nix itself
-  nix.enable = false;
-
   programs = {
     gnupg.agent.enable = true;
-    zsh.enable = true;
   };
 
   system.stateVersion = 5;
