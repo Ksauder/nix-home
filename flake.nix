@@ -16,10 +16,12 @@
   outputs = inputs@{ self, nixpkgs, nix-darwin, home-manager }:
   {
     # https://nix-darwin.github.io/nix-darwin/manual/
+    #inputs.nixpkgs.config.unfree = true;
     darwinConfigurations."olembp" = nix-darwin.lib.darwinSystem {
       system = "aarch64-darwin";
       modules = [
         ./hosts/olembp/default.nix
+        { nixpkgs.config.allowUnfree = true; }
         home-manager.darwinModules.home-manager
         {
           users.users.kylesauder = {
@@ -31,8 +33,8 @@
             useUserPackages = true;
             users.kylesauder = {
               imports = [ ./common/home/darwin.nix ];
-              home.homeDirectory = "/Users/kylesauder";
-              home.username = "kylesauder";
+              #home.homeDirectory = "/Users/kylesauder";
+              #home.username = "kylesauder";
             };
           };
         }
@@ -46,7 +48,7 @@
       };
       modules = [
         ./hosts/rgb/default.nix
-
+        { nixpkgs.config.allowUnfree = true; }
         home-manager.nixosModules.home-manager
         {
           home-manager = {

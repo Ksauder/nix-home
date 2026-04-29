@@ -5,6 +5,8 @@
   home.packages = [
     pkgs.nerd-fonts.fira-mono
     pkgs.nerd-fonts.hack
+    pkgs.spotify
+    pkgs.exiftool
   ];
 
   programs.starship.enable = true;
