@@ -1,3 +1,4 @@
+
 macOS support: [nix-darwin](https://mynixos.com/nix-darwin)
 
 this was inspired by:
@@ -31,3 +32,12 @@ nix-darwin:
 nixos:
 
 - nixconfigthing
+
+## Todos
+
+- [ ] split out the home-manager configuration so it can be used separately
+    I want to manage my dotfiles more generally with HM, so part or all of the
+    HM configuration needs to be separate so I can use dotfiles on other machines.
+    Not sure if this must be a separate repo, or just a separate file hierarchy in this
+    repo.
+- [ ] get this configuration loadable/working on rgb
