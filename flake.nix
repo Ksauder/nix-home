@@ -52,7 +52,6 @@
             home = /Users/kylesauder;
           };
           home-manager = {
-            backupFileExtension = "hmbak";
             extraSpecialArgs = { inherit dotfiles; };
             useGlobalPkgs = true;
             useUserPackages = true;
@@ -91,6 +90,7 @@
     homeConfigurations = {
       "kyle@x86_64-linux" = makeStandaloneHome { system = "x86_64-linux"; };
       "kyle@aarch64-darwin" = makeStandaloneHome { system = "aarch64-darwin"; };
+      "kyle@aarch64-linux" = makeStandaloneHome { system = "aarch64-linux"; };
     };
   };
 }

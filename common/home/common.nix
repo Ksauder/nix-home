@@ -25,10 +25,12 @@
     nmap
   ];
 
+  programs.home-manager.enable = true;
   programs.starship.enable = true;
   programs.direnv.enable = true;
   fonts.fontconfig.enable = true;
 
+  home.shellAliases.home-manager = "home-manager -b hmbak";
   #home.file = {
   #  ".config/nvim".source = "${dotfiles}/dotfiles/nvim/.config/nvim";
   #};
