@@ -2,23 +2,36 @@
 
 {
   home.stateVersion = "25.11";
-  home.packages = [
-    pkgs.nerd-fonts.fira-mono
-    pkgs.nerd-fonts.hack
-    pkgs.spotify
-    pkgs.exiftool
-    pkgs.just
-    pkgs.lazydocker
-    pkgs.lazygit
+  home.packages = with pkgs; [
+    nerd-fonts.fira-mono
+    nerd-fonts.hack
+    #spotify  # broken currently: server returns 429
+    exiftool
+    just        # justfile recipe tool cli
+    lazydocker
+    lazygit
+    bat         # better `cat`
+    fzf
+    delta
+    gh          # github cli
+    lsd         # fancy ls
+    ripgrep
+    tree
+    direnv
+    curl
+    wget
+    iftop       # interface top
+    jq
+    nmap
   ];
 
   programs.starship.enable = true;
   programs.direnv.enable = true;
   fonts.fontconfig.enable = true;
 
-  home.file = {
-    ".testdir".source = "${dotfiles}/dotfiles/nvim/.config/nvim";
-  };
+  #home.file = {
+  #  ".config/nvim".source = "${dotfiles}/dotfiles/nvim/.config/nvim";
+  #};
   imports = [
     ./programs/zsh.nix
     ./programs/git.nix

@@ -3,10 +3,7 @@
 {
   nix.enable = false;
   system.primaryUser = "kylesauder";
-  # CLI tools (replaces brew install)
-  environment.systemPackages = with pkgs; [
-    bat fzf delta gh lazygit lsd ripgrep tree direnv curl wget iftop jq nmap
-  ];
+  environment.systemPackages = with pkgs; [];
 
   # GUI apps (declarative Homebrew)
   homebrew = {

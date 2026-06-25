@@ -52,6 +52,7 @@
             home = /Users/kylesauder;
           };
           home-manager = {
+            backupFileExtension = "hmbak";
             extraSpecialArgs = { inherit dotfiles; };
             useGlobalPkgs = true;
             useUserPackages = true;
