@@ -31,11 +31,9 @@
   fonts.fontconfig.enable = true;
 
   home.shellAliases.home-manager = "home-manager -b hmbak";
-  #home.file = {
-  #  ".config/nvim".source = "${dotfiles}/dotfiles/nvim/.config/nvim";
-  #};
   imports = [
     ./programs/zsh.nix
     ./programs/git.nix
+    ./programs/nvim.nix
   ];
 }

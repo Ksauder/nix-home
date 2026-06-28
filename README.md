@@ -14,6 +14,9 @@ examples:
 
 mindcastle/topics/nix/nix_on_macos.md
 
+Adding better mutable dotfiles:
+- https://www.foodogsquared.one/posts/2023-03-24-managing-mutable-files-in-nixos/
+
 ## Quickstart
 
 run `sudo darwin-rebuild switch --flake .#olembp` to apply this configuration

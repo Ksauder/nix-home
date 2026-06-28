@@ -11,14 +11,11 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    dotfiles = {
-      url = "github:ksauder/linuxhome";
-      flake = false;
-    };
   };
 
-  outputs = inputs@{ self, nixpkgs, nix-darwin, home-manager, dotfiles }:
+  outputs = inputs@{ self, nixpkgs, nix-darwin, home-manager }:
   let
+    dotfiles = /dotfiles;
     kyleHome = {
       imports = [ ./common/home/kyle.nix ];
     };
