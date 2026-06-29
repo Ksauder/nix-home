@@ -15,7 +15,7 @@
 
   outputs = inputs@{ self, nixpkgs, nix-darwin, home-manager }:
   let
-    dotfiles = /dotfiles;
+    dotfiles = ./dotfiles;
     kyleHome = {
       imports = [ ./common/home/kyle.nix ];
     };
