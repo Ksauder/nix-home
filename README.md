@@ -39,4 +39,8 @@ run `home-manager switch --flake ~/.nixhome#kyle@<arch>-<linux|darwin>` for non 
         outside HM, but have a workflow that keeps them uneditable when managed by HM.
 - [ ] convert all (most?) dotfile configurations to nix? Does my workflow allow me to use nix everywhere? I may
     want to keep most configs as dotfiles and just link them.
-
+- [ ] seeing a zsh compinit permission issue on wsl2 debian after making a `kyle` user with existing `dev` user as 1001:
+```
+[oh-my-zsh] Insecure completion-dependent directories detected:
+lrwxrwxrwx 1 root root 64 Dec 31  1969 /nix/var/nix/profiles/default/share/zsh -> /nix/store/fla7gi1dvkw4hvwxar8m7z25p2yv7r40-nix-2.34.7/share/zsh
+```
