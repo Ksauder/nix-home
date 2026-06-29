@@ -1,5 +1,20 @@
 { config, pkgs, ... }:
 
+let
+  hmsFunction = ''
+    hms() {
+      if [ -z "$1" ]; then
+        echo '$0 <target>'
+      else
+        home-manager \
+          --extra-experimental-features nix-command \
+          --extra-experimental-features flakes \
+          switch --flake ~/.nixhome#$1
+        exec zsh -l
+      fi
+    }
+  '';
+in
 {
   programs.zsh = {
     enable = true;
@@ -20,7 +35,7 @@
     initContent = ''
       # eval "$(fnm env --use-on-cd --shell zsh)"
       # ... rest of your shell config
-    '';
+    '' + hmsFunction;
     oh-my-zsh = {
       enable = true;
       plugins = [
