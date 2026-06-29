@@ -7,7 +7,9 @@ if ! command -v git >/dev/null 2>&1; then
     exit 1
 fi
 
-git clone git@github.com:Ksauder/nix-home.git ~/.nixhome
+if [ ! -d ~/.nixhome ]; then
+    git clone git@github.com:Ksauder/nix-home.git ~/.nixhome
+fi
 
 BRANCH="${BRANCH:-main}"
 
@@ -25,4 +27,10 @@ arch="$(uname -m)"
 os="$(uname -s | tr '[:upper:]' '[:lower:]')"
 
 export HOMEREPO_DIR=~/.nixhome
-nix run home-manager/master -- switch --flake ~/.nixhome#kyle@${arch}-${os}
+nix \
+    --extra-experimental-features nix-command \
+    --extra-experimental-features flakes \
+    run home-manager/master -- \
+    --extra-experimental-features nix-command \
+    --extra-experimental-features flakes \
+    switch --flake ~/.nixhome#kyle@${arch}-${os}
