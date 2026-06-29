@@ -44,3 +44,6 @@ run `home-manager switch --flake ~/.nixhome#kyle@<arch>-<linux|darwin>` for non 
 [oh-my-zsh] Insecure completion-dependent directories detected:
 lrwxrwxrwx 1 root root 64 Dec 31  1969 /nix/var/nix/profiles/default/share/zsh -> /nix/store/fla7gi1dvkw4hvwxar8m7z25p2yv7r40-nix-2.34.7/share/zsh
 ```
+- [ ] `--extra-experimental-features flakes` and `--extra-experimental-features nix-command`
+- [ ] hitting escape in nvim is laggy when used in tmux
+    - [change escape-time setting in tmux](https://neovim.io/doc/user/faq/#_esc-in-tmux-or-gnu-screen-is-delayed)
