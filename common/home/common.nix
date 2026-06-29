@@ -23,6 +23,7 @@
     iftop       # interface top
     jq
     nmap
+    uv
   ];
   programs.home-manager.enable = true;
   programs.starship.enable = true;
