@@ -1,4 +1,4 @@
-{ config, pkgs, lib, dotfiles, ... }:
+{ config, pkgs, lib, dotfilesDir, flakeDir, ... }:
 
 {
   home.stateVersion = "25.11";
@@ -24,7 +24,6 @@
     jq
     nmap
   ];
-
   programs.home-manager.enable = true;
   programs.starship.enable = true;
   programs.direnv.enable = true;

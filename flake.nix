@@ -15,10 +15,14 @@
 
   outputs = inputs@{ self, nixpkgs, nix-darwin, home-manager }:
   let
-    dotfiles = ./dotfiles;
     kyleHome = {
       imports = [ ./common/home/kyle.nix ];
     };
+    # requires impure and must be properly set as the dir holding this flake
+    #flakeDir = assert builtins.getEnv "FLAKE_DIR" != "" || abort "Set FLAKE_DIR"; builtins.getEnv "FLAKE_DIR";
+    flakeDir = "~/.nixhome";
+    # with an 'impure' flakeDir set, we can link editable dotfiles from ./dotfiles
+    dotfilesDir = "${flakeDir}/dotfiles";
     makeStandaloneHome = { system, username ? "kyle" }:
       let
         pkgs = nixpkgs.legacyPackages.${system};
@@ -26,7 +30,7 @@
       in
       home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        extraSpecialArgs = { inherit dotfiles username; };
+        extraSpecialArgs = { inherit dotfilesDir username; };
         modules = [
           module
           { nixpkgs.config.allowUnfree = true; }
@@ -35,7 +39,7 @@
   in {
     # https://nix-darwin.github.io/nix-darwin/manual/
     #inputs.nixpkgs.config.unfree = true;
-    darwinConfigurations."olembp" = nix-darwin.lib.darwinSystem {
+    darwinConfigurations."kylesauder@olembp" = nix-darwin.lib.darwinSystem {
       system = "aarch64-darwin";
       modules = [
         ./hosts/olembp/default.nix
@@ -49,7 +53,7 @@
             home = /Users/kylesauder;
           };
           home-manager = {
-            extraSpecialArgs = { inherit dotfiles; };
+            extraSpecialArgs = { inherit dotfilesDir; };
             useGlobalPkgs = true;
             useUserPackages = true;
             users.kylesauder = {
@@ -59,7 +63,7 @@
         }
       ];
     };
-    systemConfigurations."rgb" = nixpkgs.lib.nixosSystem {
+    systemConfigurations."kyle@rgb" = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       users.users.kyle = {
         name = "kyle";

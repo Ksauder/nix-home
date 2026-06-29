@@ -1,9 +1,8 @@
-{ config, pkgs, lib, dotfiles, ... }:
+{ config, pkgs, lib, dotfilesDir, ... }:
 
 {
   home.packages = [ pkgs.neovim ];
-  #home.file.".config/nvim".source = "${dotfiles}/nvim/.config/nvim"; # this links to the store, which is root:root
   home.activation.linkNvimConfig = lib.hm.dag.entryAfter ["writeBoundary"] ''
-    ln -sfn ${dotfiles}/nvim/.config/nvim $HOME/.config/nvim
+    ln -sfn ${dotfilesDir}/nvim/.config/nvim $HOME/.config/nvim
   '';
 }
