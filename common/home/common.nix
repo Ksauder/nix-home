@@ -36,5 +36,6 @@
     ./programs/zsh.nix
     ./programs/git.nix
     ./programs/nvim.nix
+    ./programs/tmux.nix
   ];
 }
