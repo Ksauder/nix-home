@@ -1,11 +1,11 @@
 [alias]
     co = checkout
-	ci = commit
-	di = diff
-	st = status
-	br = branch -v -a
-	clonewmods = clone --recurse-submodules -j8
-	subup = submodule update --init --recursive
+    ci = commit
+    di = diff
+    st = status
+    br = branch -v -a
+    clonewmods = clone --recurse-submodules -j8
+    subup = submodule update --init --recursive
     staash = stash --all
     blaame = blame -w -C -C -C -L
     wdiff = diff --word-diff
@@ -17,31 +17,31 @@
 [fetch]
     writeCommitGraph = true
 [color]
-	diff = auto
-	status = auto
-	branch = auto
+    diff = auto
+    status = auto
+    branch = auto
     interactive = auto
 [core]
-	autocrlf = input
-	attributesfile = ~/.gitattributes
-	excludesfile = ~/.gitignore
-	pager = delta 2> /dev/null || less
-	editor = nvim
+    autocrlf = input
+    attributesfile = ~/.gitattributes
+    excludesfile = ~/.gitignore
+    pager = delta 2> /dev/null || less
+    editor = nvim
 [apply]
-	whitespace = nowarn
+    whitespace = nowarn
 [format]
-	pretty = %C(auto)%h%Creset -%C(auto)%d%Creset %s %C(blue)<%an> %Cgreen(%cr)%Creset
+    pretty = %C(auto)%h%Creset -%C(auto)%d%Creset %s %C(blue)<%an> %Cgreen(%cr)%Creset
 [push]
-	default = current
+    default = current
 [pager]
-	# Disable paging for `git branch`.
-	branch = false
+    # Disable paging for `git branch`.
+    branch = false
 [delta]
-	syntax-theme = Solarized (dark)
-	line-numbers = true
-	side-by-side = true
+    syntax-theme = Solarized (dark)
+    line-numbers = true
+    side-by-side = true
 [interactive]
-	diffFilter = delta --color-only
+    diffFilter = delta --color-only
 [merge]
     conflictstyle = diff3
 [commit]
@@ -52,10 +52,10 @@
     enabled = true
 
 [user]
-	email = ksauder.dev@gmail.com
-	name = Ksauder
+    email = ksauder.dev@gmail.com
+    name = Ksauder
 [filter "lfs"]
-	process = git-lfs filter-process
-	required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
