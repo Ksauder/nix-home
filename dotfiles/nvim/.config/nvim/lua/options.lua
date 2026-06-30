@@ -31,6 +31,9 @@ vim.o.mouse = "a"
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.o.scrolloff = 10
 
+-- optionally enable 24-bit colour
+vim.opt.termguicolors = true
+
 -- Show <tab> and trailing spaces
 vim.o.list = true
 
@@ -46,4 +49,3 @@ vim.o.confirm = true
 --     vim.o.clipboard = 'unnamedplus'
 --   end,
 -- })
-

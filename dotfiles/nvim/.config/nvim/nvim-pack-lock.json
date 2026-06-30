@@ -5,6 +5,10 @@
       "src": "https://github.com/saghen/blink.cmp",
       "version": "'v1'"
     },
+    "folke.which-key": {
+      "rev": "fcbf4eea17cb299c02557d576f0d568878e354a4",
+      "src": "https://github.com/folke/which-key.nvim"
+    },
     "mason": {
       "rev": "bb639d4bf385a4d89f478b83af4d770be05ab7eb",
       "src": "https://github.com/mason-org/mason.nvim"
@@ -12,6 +16,20 @@
     "monokai": {
       "rev": "b8bd44d5796503173627d7a1fc51f77ec3a08a63",
       "src": "https://github.com/tanvirtin/monokai.nvim"
+    },
+    "nvim-tree": {
+      "rev": "85d1145ac71c1b8e1423862c78165a1f609faf60",
+      "src": "https://github.com/nvim-tree/nvim-tree.lua",
+      "version": "'nvim-tree-v1.17.0'"
+    },
+    "tree": {
+      "rev": "85d1145ac71c1b8e1423862c78165a1f609faf60",
+      "src": "https://github.com/nvim-tree/nvim-tree.lua"
+    },
+    "whichkey": {
+      "rev": "fcbf4eea17cb299c02557d576f0d568878e354a4",
+      "src": "https://github.com/folke/which-key.nvim",
+      "version": "'v3.17.0'"
     }
   }
 }
