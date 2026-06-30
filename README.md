@@ -51,3 +51,5 @@ lrwxrwxrwx 1 root root 64 Dec 31  1969 /nix/var/nix/profiles/default/share/zsh -
 - [ ] `--extra-experimental-features flakes` and `--extra-experimental-features nix-command`
 - [ ] hitting escape in nvim is laggy when used in tmux
   - [change escape-time setting in tmux](https://neovim.io/doc/user/faq/#_esc-in-tmux-or-gnu-screen-is-delayed)
+- [ ] get discord gated since it doesn't work on aarch64-linux apparently
+
