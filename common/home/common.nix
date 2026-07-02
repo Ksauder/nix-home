@@ -24,6 +24,7 @@
     jq
     nmap
     uv
+    pandoc
     #discord # does not work on aarch64-linux?
   ];
   programs.home-manager.enable = true;
