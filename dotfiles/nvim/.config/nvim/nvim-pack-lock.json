@@ -22,6 +22,14 @@
       "src": "https://github.com/nvim-tree/nvim-tree.lua",
       "version": "'nvim-tree-v1.17.0'"
     },
+    "nvim-tree.lua": {
+      "rev": "8e8be709c9a93e1ebefde7964884a8b564bfd3e0",
+      "src": "https://github.com/nvim-tree/nvim-tree.lua"
+    },
+    "nvim-web-devicons": {
+      "rev": "dfbfaa967a6f7ec50789bead7ef87e336c1fa63c",
+      "src": "https://github.com/nvim-tree/nvim-web-devicons"
+    },
     "tree": {
       "rev": "85d1145ac71c1b8e1423862c78165a1f609faf60",
       "src": "https://github.com/nvim-tree/nvim-tree.lua"
